@@ -29,7 +29,7 @@ if($_POST){
     $eda =  $_POST['Edad'];
 
 
-$slq = 'INSERT INTO persona(Nombre,Apelido, Edad)VALUES(?,?,?)';
+$slq = 'INSERT INTO persona (id, Nombre, Apellido, Edad) VALUES (NULL,?,?,?)';
 $sentA = $pdo->prepare($slq);
     $sentA->execute(array($Nome,$ape,$eda));
 

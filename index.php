@@ -18,7 +18,14 @@ $res = $gst->fetchAll();// array con fetch all
 
 
 //operacion de agregar
+if($_POST){
 
+    $Nome =  $_POST['Nombre'];
+    $ape =  $_POST['Apellido'];
+    $eda =  $_POST['Edad'];
+
+
+}
 
 
 
@@ -79,19 +86,19 @@ $res = $gst->fetchAll();// array con fetch all
 
             <h1>AGREGAR</h1>
 
-            <form>
+            <form method="post">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nombre</label>
-                    <input  type="text" class="form-control mt-3" id="apellido" aria-describedby="emailHelp" placeholder="Nombre">
+                    <input  type="text" class="form-control mt-3" id="apellido" aria-describedby="emailHelp" placeholder="Nombre" required>
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Apellido</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"  >
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Edad</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"  >
                 </div>
 
                 <button  class="btn btn-primary">enviar</button>

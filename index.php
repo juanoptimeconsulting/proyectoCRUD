@@ -43,6 +43,8 @@ $res = $gst->fetchAll();// array con fetch all
 
 
     <div class="row">
+
+        <!-abre columnas-->
         <div class="col-md-6">
 
             <?php   foreach ($res as $muestra): ?>
@@ -71,7 +73,33 @@ $res = $gst->fetchAll();// array con fetch all
             endforeach;//termina el for
             ?>
 
+        </div><!--cierra columna-->
+
+        <div class="col-md-6">
+
+            <h1>AGREGAR</h1>
+
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nombre</label>
+                    <input  type="text" class="form-control mt-3" id="apellido" aria-describedby="emailHelp" placeholder="Nombre">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Apellido</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Edad</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+
+                <button  class="btn btn-primary">enviar</button>
+            </form>
+
+
         </div>
+
 
 
     </div>

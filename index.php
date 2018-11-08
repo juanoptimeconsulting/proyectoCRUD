@@ -18,11 +18,24 @@ $res = $gst->fetchAll();// array con fetch all
 
 
 //operacion de agregar
+
+
 if($_POST){
+
+    echo 'fail';
 
     $Nome =  $_POST['Nombre'];
     $ape =  $_POST['Apellido'];
     $eda =  $_POST['Edad'];
+
+
+$slq = 'INSERT INTO persona(Nombre,Apelido, Edad)VALUES(?,?,?)';
+$sentA = $pdo->prepare($slq);
+    $sentA->execute(array($Nome,$ape,$eda));
+
+
+   header('location:index.php');
+
 
 
 }
@@ -49,13 +62,14 @@ if($_POST){
 
 
 
-    <div class="row">
+    <div class="row  ">
 
         <!-abre columnas-->
         <div class="col-md-6">
 
             <?php   foreach ($res as $muestra): ?>
 
+                <br>
 
 
             <div class="alert alert-<?php
@@ -86,22 +100,22 @@ if($_POST){
 
             <h1>AGREGAR</h1>
 
-            <form method="post">
+            <form method="POST">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nombre</label>
-                    <input  type="text" class="form-control mt-3" id="apellido" aria-describedby="emailHelp" placeholder="Nombre" required>
+                    <input  type="text" class="form-control mt-3"    name="Nombre" placeholder="Nombre" required>
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Apellido</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"  >
+                    <input type="text" class="form-control"  placeholder="Apellido" name="Apellido" required >
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Edad</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"  >
+                    <input type="number" class="form-control"  placeholder="Edad" name="Edad" required >
                 </div>
 
-                <button  class="btn btn-primary">enviar</button>
+                <button  class="btn btn-primary  btn-lg btn-block">enviar</button>
             </form>
 
 

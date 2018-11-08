@@ -8,21 +8,23 @@
 include_once 'conexion.php';
 
 
-$query = 'SELECT * FROM persona';
+$query = 'SELECT * FROM persona'; // sentencia
 
 $gst = $pdo->prepare($query);
 
 $gst->execute();
 
-$res = $gst->fetchAll();
+$res = $gst->fetchAll();// array con fetch all
 
+
+//operacion de agregar
 
 
 
 
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -34,7 +36,7 @@ $res = $gst->fetchAll();
     <title>Hello, world!</title>
 </head>
 <body>
-<h1>Hello, world!</h1>
+
 
 <div class="container">
 
@@ -45,11 +47,24 @@ $res = $gst->fetchAll();
 
             <?php   foreach ($res as $muestra): ?>
 
+
+
             <div class="alert alert-<?php
-            echo $muestra['Nombre']; ?>text-uppercase"  role="alert">
-                <?php echo  $muestra['Edad']; ?>
-                -
-                <?php echo $muestra['Apellido']?>
+            echo $muestra['Nombre']; ?> text-uppercase"  role="alert">
+                <?php echo $eda='EDAD: '.  $muestra['Edad']; ?>
+
+                <br>
+                <br>
+
+                <?php
+
+
+                if($muestra['Apellido']){
+
+                    echo   $mss= 'APELLIDO: '. $muestra['Apellido'];
+                }
+
+                ?>
             </div>
 
             <?php
